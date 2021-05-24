@@ -4,7 +4,6 @@ A suite of apps designed to automate daily tasks.
 <br>
 <br>
 Includes:
-<br>
 <ul>
   <li>Daily Pilot Log processing</li>
   <li>Drive Count Calculations</li>

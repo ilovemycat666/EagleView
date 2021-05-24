@@ -5,11 +5,11 @@ A suite of apps designed to automate daily tasks.
 <br>
 Includes:
 <ul>
-  <li>Daily Pilot Log processing</li>
+  <li>Daily Pilot Log Processing</li>
   <li>Drive Count Calculations</li>
-  <li>Posts drive counts/ organized data to Slack</li>
+  <li>Posts xslx file to Slack</li>
   <li>Flask App Displays Pilot Details (centered around drive counts)</li>
-  <li>Complies Flight Line Data, Processes for Quickbase</li>
+  <li>Compiles Flight Line Data, Processes for Quickbase</li>
 </ul>
 <br>
 <br>

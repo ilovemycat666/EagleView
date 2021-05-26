@@ -4,11 +4,9 @@ from slack_sdk.webhook import WebhookClient
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 
-# client = WebClient('xoxb-2020965252080-1998095496995-tLWaMeBVGdOCceKJRu54dLw1') # Bot User OAuth Pilot Logs Test
-client = WebClient('xoxb-2697074441-2059264830949-hHtMD0gd13AKMM09F1fepQ05') # Bot User OAuth TC Shipping Channel
+client = WebClient('BOT token here (OAuth Page on Slack.com)') # Bot User OAuth TC Shipping Channel
 
-# url = "https://hooks.slack.com/services/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" # Pilot Logs Test URL
-url = "https://hooks.slack.com/services/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" # TC Shipping Channel
+url = "Webhook address"
 webhook = WebhookClient(url)
 
 def create(vendors, drive_count, suggested):

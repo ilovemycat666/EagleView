@@ -20,28 +20,27 @@ for v in vendors:
 					line.append(boxes)
 					pilots.append(line)
 
-# Creats numbers from pilots and transforms numbers, '(585) 703-1895' to, '+15857031895' for twilio
 numbers = ['+1' + line[8][1:4] + line[8][6:9] + line[8][10:] for line in pilots]
 
 for line in pilots:
 	if line[0] == 'JAV':
-		print(f'''Hello, {line[7]} this is an automated request from EagleView. Our system shows you only have {line[9]} {line[5]} drives remaining. Please confirm your shipping address at the link below:\nhttps://eagleview.quickbase.com/db/bqt4z4hze?a=nwr''')
+		print(f'''Hello, {line[7]} this is an automated request from EagleView. Our system shows you only have {line[9]} {line[5]} drives remaining. Please confirm your shipping address at the link below:''')
 
-# work_test = ('+15857031895', '+15857979340', '+13157194255')
+# group of phone numbers = ('#Phone numbers')
 
 # # Your Account Sid and Auth Token from twilio.com/console
 # # and set the environment variables. See http://twil.io/secure
 
-# # account_sid = os.environ['AC28ce78f51dc88ba514b50112ac6b5f2d']
-# # auth_token = os.environ['c5eec11af22e4e72ed1b6f79e7e6c226']
-# account_sid = 'AC28ce78f51dc88ba514b50112ac6b5f2d'
-# auth_token = 'c5eec11af22e4e72ed1b6f79e7e6c226'
+# # account_sid = os.environ['#Some code']
+# # auth_token = os.environ['#More code']
+# account_sid = 'Your account sid'
+# auth_token = 'your auth token'
 # client = Client(account_sid, auth_token)
 
 # for g in work_test:
 # 	client.messages \
 # 	    .create(
 # 	         body=f"Hey this is eagle view, here's a drive request, please fill this out as soon as possible.\nhttps://eagleview.quickbase.com/db/bqt4z4hze?a=nwr",
-# 	         from_='+14243484582',
+# 	         from_='#A phone number',
 # 	         to=g
 # 	     )

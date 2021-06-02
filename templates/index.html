@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='basic.css') }}">
+</head>
+<body onload="colorized({{ hangars }})">
+{% include 'navbar.html' %}
+<div class='average'>
+  <label for="average">Set Max Drive Average:</label>
+  <select id="average" name="average">
+    <option value="1">1</option>
+    <option value="1.5">1.5</option>
+    <option value="2">2</option>
+    <option value="2.5">2.5</option>
+    <option value="3">3</option>
+    <option value="3.5">3.5</option>
+    <option value="4">4</option>
+    <option value="4.5"selected>4.5</option>
+    <option value="5">5</option>
+    <option value="5.5">5.5</option>
+    <option value="6">6</option>
+    <option value="6.5">6.5</option>
+    <option value="7">7</option>
+    <option value="100">All</option>
+  </select>
+  <button onclick="average()">Go</button>
+</div>
+
+<div class='row'>
+  {% for vend in drive_count %}
+    <div class='vends' id='{{ vend[0][0][0] }}'> {{ vend[0][0][0] }} </div></div>
+    {% include 'card.html' %}
+  {% endfor %}
+<div class='vends' id='CAN'>Canadian Wednesdays</div>
+{% include 'canadian.html' %}    
+<script src="{{ url_for('static',filename='basic.js') }}"></script>
+</body>
+</html>
+
+   <!-- 0      1         2       3       4         5       6          7                   8         9 -->
+<!-- ['FBS', 'CYHZ', 'Halifax', 'NS', 'C-GJKX', 'Penta', 'N5', 'Bradley Hyland', '(705) 309-6912', '4'] -->

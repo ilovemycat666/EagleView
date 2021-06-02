@@ -1,0 +1,137 @@
+* {
+	box-sizing: border-box;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+  width: 100%;
+  max-height: 500px;
+  overflow: auto;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+  /* .magic {visibility: hidden;} */
+}
+
+li {
+	display: inline-block;
+	font-size: 20px;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+a:hover {
+	color:blue;
+}
+
+#navbar {
+	margin-top: 0px;
+	overflow: hidden;
+    background-color: grey;
+	position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    left: 0;
+    width: 100%; /* Full width */
+}
+.vends {
+	font-family: monospace;
+	font-size: 15pt;
+	margin-bottom: 5px;
+}
+
+.vends::before {
+	content: "";
+	display: block;
+	height: 60px;
+}
+
+.average {
+	float: right;
+	font-size: 12pt;
+	margin-bottom: 5px;
+}
+
+.average::before {
+	content: "";
+	display: block;
+	height: 30px;
+}
+
+.station {
+	font-family: monospace;
+	font-size: 15pt;
+	margin-bottom: 5px;
+	margin-top: 5px;
+} 
+
+#location {
+	margin-bottom: 15px;
+	font-family: fantasy;
+}
+
+.data {
+	float: right;
+	margin-top: 5px;
+	margin-right: 5px;
+	font-family: monospace;
+	font-size: 10pt;
+} 
+
+.xbar {
+	border: solid;
+	border-radius: 2pt;
+	padding: 5px;
+	float: right;
+	margin-top: 5px;
+	margin-right: 5px;
+	font-family: monospace;
+	font-size: 10pt;
+}
+
+#pilot {
+	font-weight: bold;
+	margin-top: 5px;
+} 
+
+.fields {
+	margin-bottom: 5x;
+	margin-top: 5px;
+} 
+
+.col-3 {
+	border: solid;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.red_line {
+	border: solid;
+	margin: 5px;
+	padding: 5px;
+	border-color: red;
+}
+
+.no_line {
+	margin: 1px;
+	padding: 1px;
+}

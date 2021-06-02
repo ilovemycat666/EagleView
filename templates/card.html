@@ -1,0 +1,29 @@
+<div class='row'>
+  {% for group in vend %}
+<div class='col-3 {{ group[0][1] }}'>
+  <div class='xbar'> x&#x0304; {{ group[0][-1] }} </div>
+  {% if group[0][5] == 'Penta'%}
+  <div class='station'> {{ group[0][0] }}-{{ group[0][1] }} &#9959;</div> 
+  {% elif group[0][5] == 'Pacific' %}
+  <div class='station'> {{ group[0][0] }}-{{ group[0][1] }} &#128065;</div> 
+  {% endif %}
+  <div class='location'> {{ group[0][2] }}, {{ group[0][3] }}</div>
+  {% for line in group %}
+    {% if line[9] <= 3 %}
+	  <div class='red_line' id='{{ line[4] }}'> 
+	{% else %}
+	  <div class='no_line' id='{{ line[4] }}'>
+	{% endif %}
+	      <div class='data'> {{ line[9] }} </div>
+	      <div id='pilot'> {{ line[7] }} </div>
+	      <div class='data'> {{ line[4] }} </div>
+	      <div class='fields'> Tail: </div>
+	      <div class='data'> {{ line[8] }} </div>
+	      <div class='fields'> Phone: </div>
+	      <div class='data'> {{ line[5] }} / {{ line[6] }} </div>
+	      <div class='fields'> System: </div>
+	    </div>	
+	{% endfor %}
+</div>
+{% endfor %}
+</div>

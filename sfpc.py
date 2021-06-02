@@ -2,7 +2,7 @@ import requests
 import csv
 from bs4 import BeautifulSoup
 
-url = 'https://eagleview.quickbase.com/db/bpw3pr8ns?a=api_genresultstable&qid=34&options=csv&usertoken=b526ve_m8jc_0_c4paz38br5amh6bwm2cewciv5n6w'
+url = 'quickbase api address'
 r = requests.get(url)
 with open(r'C:\Users\edwin.reik\Documents\programming\flight_tracker\flightsupport.csv', 'wb') as f:
 	f.write(r.content)	
@@ -11,9 +11,9 @@ with open(r'C:\Users\edwin.reik\Documents\programming\flight_tracker\flightsuppo
 	reader = csv.reader(csvfile)
 	for row in reader:
 		if row[2] == "Reflies Planned":
-			reflies.append(f'http://alpha.hq.eagleview.com/isdinfo/missing_imagery-output.php?strInputQuery={row[1]}&lines=aye')
+			reflies.append(f'address for internal site')
 		elif row[2] == "Flying":
-			flying.append(f'http://alpha.hq.eagleview.com/isdinfo/missing_imagery-output.php?strInputQuery={row[1]}&lines=aye')
+			flying.append(f'address for internal site')
 
 # print('---- Reflies Planned ----')
 # for row in reflies:

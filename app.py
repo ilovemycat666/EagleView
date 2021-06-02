@@ -8,8 +8,8 @@ app = Flask(__name__)
 run_with_ngrok(app)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 5
 
-# # url = "https://hooks.slack.com/services/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" # Pilot Logs Test URL
-# url = "https://hooks.slack.com/services/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" # TC Shipping Channel
+
+# url = "https://hooks.slack.com/services/There is a special code here" # Code based on the channel 
 # webhook = WebhookClient(url)
 
 pull_logs = pull_logs()
@@ -57,28 +57,3 @@ def index():
 
 if __name__ == "__main__":
     app.run()
-
-
-
-
-# gets all post details
-# print(dict(request.values.items()))	
-# {'ToCountry': 'US', 
-# 'ToState': 'CA', 
-# 'SmsMessageSid': 'SM24d05b3dad306825a037f8c8d0c92331', 
-# 'NumMedia': '0', 
-# 'ToCity': '', 
-# 'FromZip': '14623', 
-# 'SmsSid': 'SM24d05b3dad306825a037f8c8d0c92331', 
-# 'FromState': 'NY', 
-# 'SmsStatus': 'received', 
-# 'FromCity': 'ROCHESTER', 
-# 'Body': 'F', 
-# 'FromCountry': 'US', 
-# 'To': '+14243484582', 
-# 'ToZip': '', 
-# 'NumSegments': '1', 
-# 'MessageSid': 'SM24d05b3dad306825a037f8c8d0c92331', 
-# 'AccountSid': 'AC28ce78f51dc88ba514b50112ac6b5f2d', 
-# 'From': '+15857031895', 
-# 'ApiVersion': '2010-04-01'}

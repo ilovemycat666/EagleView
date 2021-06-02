@@ -128,14 +128,3 @@ def suggested(group_len, line):
 		elif str_boxes[-1:] == '0':
 			return f"{str_boxes[:-2]} boxes"
 		return f"{boxes} boxes"
-
-# def phone_home(phone):
-# 	phone = f'({phone[2:5]}) {phone[5:8]}-{phone[8:]}'
-# 	# print(phone)
-# 	for log in logs_:
-# 		if log[8] == phone:
-# 			return log
-
-# V: {'PFA', 'SHA', 'JAV', 'SKY', 'OAL', 'FBS', 'GII', 'LAI'}
-# H: {'KFDK', 'CYWG', 'CYXE', 'CYHZ', 'KFMN', 'KHLN', 'KDRO', 'KMRT', 'KRIL', 'KLYH', 'PHJR (JRF)', 'KPLU', 'KDPA', 'KRBW', 'CYLW', 'KHEF', 'KIDA', 'KCXY', 'KBJC', 'KHDC', 'KMGY', 'KCRG', 'KHKY', 'KSNY', 'KSTC', 'KRDM', 'KGKY', 'KDLH', 'KPIH', 'KAVP', 'CYXC', 'KJAN', 'KJKJ', 'KBKV', 'KLNK', 'KCMI', 'KCOE', 'KMAF', 'KOLM', 'KAEG', 'KROC', 'CYQY', 'KTVC', 'KBFF', 'KSGU', 'KPVU', 'PHKO (KOA)', 'KSXK', 'KSBN', 'KYKM', 'KRNO', 'KRME', 'KGTU', 'KFNL', 'CZVL', 'KFCM', 'PHOG (OGG)'}
-# R: {'C6', 'GE300', '65 Twister', 'N5', 'GE220', 'N5IR', 'HubbleIR', 'Hubble'}

@@ -6,12 +6,12 @@ from datetime import datetime
 
 
 def pull_logs():
-	url = 'https://eagleview.quickbase.com/db/bpw3pr8m9?a=api_genresultstable&qid=66&options=csv&usertoken=b526ve_m8jc_0_c4paz38br5amh6bwm2cewciv5n6w'
+	url = 'quickbase table address'
 	r = requests.get(url)
-	with open(r'C:\Users\edwin.reik\Documents\programming\dailypilotlogs\Daily_Pilot_Logs.csv', 'wb') as f:
+	with open(r'path to csv\Daily_Pilot_Logs.csv', 'wb') as f:
 		f.write(r.content)	
 
-	with open(r'C:\Users\edwin.reik\Documents\programming\dailypilotlogs\Daily_Pilot_Logs.csv') as csvfile:
+	with open(r'path to csv\Daily_Pilot_Logs.csv') as csvfile:
 	    reader = csv.reader(csvfile)
 	    logs = [row for row in reader]
 	    logs.pop(0)

@@ -9,9 +9,6 @@ run_with_ngrok(app)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 5
 
 
-# url = "https://hooks.slack.com/services/There is a special code here" # Code based on the channel 
-# webhook = WebhookClient(url)
-
 pull_logs = pull_logs()
 
 @app.route('/')

@@ -4,13 +4,16 @@ from slack_sdk.webhook import WebhookClient
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 
-client = WebClient('BOT token here (OAuth Page on Slack.com)') # Bot User OAuth TC Shipping Channel
-
-url = "Webhook address"
+#name of channel in slack
+channels='#tc-shipping'
+#from oAuth & Permissions page
+client = WebClient('hidden code')
+#from incoming webhooks page
+url = 'hidden url'
 webhook = WebhookClient(url)
 
 def create(vendors, drive_count, suggested):
-	# Creating Excel file 
+	# Creating Excel file
 	today = datetime.today()
 	today = str(today)
 	today = today[:10]
@@ -35,6 +38,12 @@ def create(vendors, drive_count, suggested):
 	bot_highlight = workbook.add_format({'bg_color': 'yellow'})
 	bot_highlight.set_bottom(1)
 
+	canada = workbook.add_format({'bg_color': 'cyan'})
+
+	bot_canada = workbook.add_format({'bg_color': 'cyan'})
+	bot_canada.set_bottom(1)
+
+
 	bot_border = workbook.add_format({'bottom': 1})
 	left_border = workbook.add_format({'left': 1})
 	right_border = workbook.add_format({'right': 1})
@@ -51,7 +60,7 @@ def create(vendors, drive_count, suggested):
 		worksheet.set_column('C:C', 5)
 		worksheet.set_column('I:I', 5)
 		worksheet.set_landscape()
-	  
+
 		col = 0
 		row = 1
 
@@ -62,7 +71,10 @@ def create(vendors, drive_count, suggested):
 					for line in group:
 						g_count += 1
 						if len(group) != g_count:
-							worksheet.write(row, col, line[1])
+							if line[0].startswith('C'):
+								worksheet.write(row, col, line[1], canada)
+							else:
+								worksheet.write(row, col, line[1])
 							worksheet.write(row, col + 1, line[2])
 							worksheet.write(row, col + 2, line[3])
 							worksheet.write(row, col + 3, line[4])
@@ -78,7 +90,10 @@ def create(vendors, drive_count, suggested):
 
 							row += 1
 						elif len(group) == g_count:
-							worksheet.write(row, col, line[1], bot_border)
+							if line[0].startswith('C'):
+								worksheet.write(row, col, line[1], bot_canada)
+							else:
+								worksheet.write(row, col, line[1], bot_border)
 							worksheet.write(row, col + 1, line[2], bot_border)
 							worksheet.write(row, col + 2, line[3], bot_border)
 							worksheet.write(row, col + 3, line[4], bot_border)
@@ -90,8 +105,8 @@ def create(vendors, drive_count, suggested):
 							worksheet.write(row, col + 6, line[7], bot_border)
 							worksheet.write(row, col + 7, line[8], bot_border)
 							worksheet.write(row, col + 8, line[9], bot_center)
-							worksheet.write(row, col + 9, suggested(len(group), line), sug)  
-							worksheet.write(row, col + 10, None, bot_border)  	
+							worksheet.write(row, col + 9, suggested(len(group), line), sug)
+							worksheet.write(row, col + 10, None, bot_border)
 
 							row += 1
 	workbook.close()
@@ -101,7 +116,7 @@ def create(vendors, drive_count, suggested):
 	try:
 	    filepath=f"{today}.xlsx"
 	    # response = client.files_upload(channels='#pilot-spot', file=filepath)
-	    response = client.files_upload(channels='#tc-shipping', file=filepath)
+	    response = client.files_upload(channels=channels, file=filepath)
 	    assert response["file"]  # the uploaded file
 	except SlackApiError as e:
 	    # You will get a SlackApiError if "ok" is False

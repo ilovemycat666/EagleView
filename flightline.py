@@ -11,7 +11,7 @@ import operator
 today = datetime.date.today()
 folder_name = str(today)
 folder_name = folder_name[2:4] + folder_name[5:7] + folder_name[8:]
-parent_directory = r'\\beast\Geomatics\Non-Revenue\Support Files\Raw Drive Text Reports\QuickBase Spreadsheets'
+parent_directory = 'hidden for hithub'
 path = os.path.join(parent_directory, folder_name)
 os.mkdir(path)
 print(f"Directory {folder_name} created")
@@ -20,22 +20,22 @@ y = today - datetime.timedelta(days=1)
 y = str(y)
 y = y[:4] + y[5:7] + y[8:]
 
-from_path = fr'\\beast\geomatics\Non-Revenue\Support Files\RLAS_Reports\Received_Plans_{y}.csv'
-to_path = fr'\\beast\Geomatics\Non-Revenue\Support Files\Raw Drive Text Reports\QuickBase Spreadsheets\{folder_name}\Received_Plans_{y}.csv'
+from_path = 'from path hidden'
+to_path = 'to path hidden'
 print(f"Received_Plans.csv copied to {folder_name}")
 
 shutil.copyfile(from_path, to_path)
 received_plans = []
-with open(fr'\\beast\geomatics\Non-Revenue\Support Files\RLAS_Reports\Received_Plans_{y}.csv', newline='', encoding='utf-8') as csvfile:
+with open('path hidden', newline='', encoding='utf-8') as csvfile:
     reader = csv.reader(csvfile)
     for row in reader:
         received_plans.append(row)
     received_plans.pop(0)
 r_len = len(received_plans)
 
-url = 'https://eagleview.quickbase.com/db/bpw3pr8nu?a=api_genresultstable&qid=70&options=csv&usertoken=b526ve_m8jc_0_c4paz38br5amh6bwm2cewciv5n6w'
+url = 'https://eagleview.quickbase.com/db/[hidden url]'
 r = requests.get(url)
-with open(fr'\\beast\Geomatics\Non-Revenue\Support Files\Raw Drive Text Reports\QuickBase Spreadsheets\{folder_name}\Flight_Lines.csv', 'wb') as f:
+with open('hidden path', 'wb') as f:
     f.write(r.content)
 print(f"Flight_Lines.csv saved to {folder_name}")
 
@@ -46,11 +46,11 @@ with open('Flight_Lines.csv', newline='', encoding='utf-8') as csvfile:
         flight_lines.append(row)
 flight_lines.pop(0)
 
-wb = xw.Book(r'\\beast\geomatics\Non-Revenue\Support Files\RLAS_Reports\Templates\RLAS_ISD_QB_Template.xlsx')
+wb = xw.Book('hidden file path')
 RLAS = wb.sheets['RLAS-ISD+QB']
 OUT = wb.sheets['Outliers']
 QB = wb.sheets['QB Report']
-wb2 = xw.Book(r'\\beast\geomatics\Non-Revenue\Support Files\RLAS_Reports\Templates\QB_FL_Progress_Template.xlsx')
+wb2 = xw.Book('hidden file path')
 QB_FL = wb2.sheets['Sheet1']
 
 RLAS.range("A2").value = received_plans
@@ -174,7 +174,7 @@ QB_FL.range('A2').value = colH
 QB_FL.range(f'A{r_len + 1}').value = out_colH
 
 
-wb.save(fr'\\beast\Geomatics\Non-Revenue\Support Files\Raw Drive Text Reports\QuickBase Spreadsheets\{folder_name}\RLAS_ISD_QB.xlsx')
-wb2.save(fr'\\beast\Geomatics\Non-Revenue\Support Files\Raw Drive Text Reports\QuickBase Spreadsheets\{folder_name}\QB_FL_Progress.xlsx')
+wb.save('hidden file path')
+wb2.save('hidden file path')
 # wb.close()
 # wb2.close()

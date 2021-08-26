@@ -17,5 +17,5 @@ In the works:
 <ul>
   <li>Automate Pilot Texts</li>
   <li>Write API calls to FedEx Label Printer</li>
-  <li>Fine Tune Flight Line Processing</li>
+  <li>Automate Emails to pilots for missing drives (missing.py)</li>
 </ul>
